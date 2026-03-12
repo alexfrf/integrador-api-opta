@@ -483,13 +483,16 @@ def load_fixtures(con,ruta_df="config/metadata.xlsx",origen='scoresway'):
         if data.shape[0]>0:
             data.to_sql(name='dim_fixture', con=con, if_exists='replace', index=False)
             
-def get_datos_partido(partido_id,fecha,home,away,token):
+def get_datos_partido(partido_id,df_fixtures,token):
             callback_id = "W3e14cbc3e4b2577e854bf210e5a3c7028c7409678" 
             # Headers del navegador
             headers = {
                 'Accept': 'application/json',
                 'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36','referer': 'https://www.scoresway.com/en_GB/soccer/liga-profesional-argentina-2025/3l4bzc8syz1ea2dnv453kp89g/match/view/1xefu7uwfmhf8q24rstfoh7v8/match-summary'
             }
+            fecha = df_fixtures[df_fixtures.match_id==partido_id].date.values[0]
+            home = df_fixtures[df_fixtures.match_id==partido_id].home_team.values[0]
+            away = df_fixtures[df_fixtures.match_id==partido_id].away_team.values[0]
             # Armar nombre del archivo
             file_name = f"{fecha}_{home}_{away}_{partido_id}.json".replace(":", "-")
             sdapi_outlet_key = token
