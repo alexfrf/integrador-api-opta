@@ -1,0 +1,8 @@
+{
+  "scoresway": {
+    "sdapi_outlet_key": "inserta-tu-token",
+    "ruta_dest":"scoresway"
+    },
+  "dummy_competition":"esp-ligaf",
+  "dummy_ori":"scoresway"
+  }

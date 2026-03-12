@@ -1,0 +1,79 @@
+﻿typeId;type_displayName;DESCRIPTION
+1;Pass;The attempted delivery of the ball from one player to another player on the same team. A player can use any part of their body (permitted in the laws of the game) to execute a pass. Event categorization includes open play passes, goal kicks, corners and free kicks played as passes. Crosses, keeper throws, and throw ins do not count as passes. outcome: 0 = Unsuccessful pass = pass did not find teammate | 1 = Successful pass
+2;Offside Pass;A pass attempt where the intended receiving player is called offside. outcome: always set to 1
+3;Take On;An attempt by one player to dribble past an opponent. outcome: 0 = Unsuccessful - player lost possession or was tackled | 1 = Successful take on
+4;Foul;Indicates a foul has been committed. The event comes in pairs, with one for the team committing the foul (has outcome = 0) and another for the team fouled (outcome = 1).
+5;Out;When the ball has left the field of play for a goal kick or throw in. Does not include corners. (outcome = 0) and another for the team who will resume the match in possession (outcome = 1).
+6;Corner Awarded;Indicates the ball has gone out of play for a corner kick. The event comes in pairs, with one for the team who have conceded the corner (outcome = 0) and another for the team who have won the corner (outcome = 1).
+7;Tackle;A tackle is defined when a player connects with the ball in a legal, ground level challenge and successfully takes the ball away from the opposition player. The tackled player must be in controlled possession of the ball to be tackled by an opposition player. outcome = 1: tackling player's team gains possession or the ball goes out of play. outcome = 0: possession remains with the opponent.
+8;Interception;When a player intercepts any pass event between opposition players and prevents the ball reaching its target. Cannot be a clearance. outcome: always set to 1
+10;Save;A goalkeeper preventing the ball from entering the goal with any part of their body when facing an intentional attempt from an opposition player. Can also be an outfield player event with qualifierId 94 for blocked shot. outcome: always set to 1
+11;Claim;"Goalkeeper only event; goalkeeper attempts to catch an aerial ball. outcome: 0 = Keeper drops the ball after an attempted catch from a cross. They may then pick up the ball again and retain possession - this would be a separate event. 1 = Keeper catches the cross in one attempt, for example no drop."
+12;Clearance;A defensive action when a player attempts to get the ball away from a dangerous zone on the pitch with no immediate target regarding a recipient for the ball. outcome: always set to 1
+13;Miss;A shot which goes/is projected to travel wide or over the goal. outcome: always set to 1
+14;Post;A shot which directly hits the frame of the goal. outcome: always set to 1
+15;Attempt Saved;A shot which is saved by the goalkeeper or blocked by an opposition player. The player performing the event is the shooter. outcome: always set to 1
+16;Goal;Attributing a goal to the goal scoring player. Given any contention around assigning a goal to an appropriate player, Opta applies its own rules and when applicable aligns decisions to the relevant official competition governing body. outcome: always set to 1
+17;Card;Cards are collected as yellow, second yellow or red card. Opta cross-checks the cards against the official sources to match the official statistics and aligns the collection unless there is recognition of a clear error. outcome: always set to 1
+18;Player off;Player is substituted off. outcome: always set to 1
+19;Player on;Player comes on as a substitute. outcome: always set to 1
+20;Player retired;Player is forced to leave the pitch due to injury and the team have no substitutions left. outcome: always set to 1
+21;Player returns;Player comes back on the pitch. outcome: always set to 1
+22;Player becomes goalkeeper;When an outfield player has to replace the goalkeeper. outcome: always set to 1
+23;Goalkeeper becomes player;Goalkeeper becomes an outfield player. outcome: always set to 1
+24;Condition change;Change in playing conditions. outcome: always set to 1
+25;Official change;Referee or linesman is replaced. outcome: always set to 1
+27;Start delay;An event to capture when the referee stops the game, typically, for a player to receive treatment for an injury or if there is a VAR review underway and play is paused. outcome: always set to 1
+28;End delay;Used when the stoppage ends and play resumes. outcome: always set to 1 Indicates that there has been a temporary stop in play Note - October 2019: We will update the documention soon to confirm whether this Event Type ID is still used
+29;Temporary stop;Indicates that there has been a temporary stop in play Note - October 2019: We will update the documention soon to confirm whether this Event Type ID is still used 
+30;End;End of a match period. outcome: always set to 1
+31;Picked an orange;Note - October 2019: No longer used
+32;Start;Start of a match period. outcome: always set to 1
+34;Team set up;The qualifiers on this event show team lineup and formation information. outcome: always set to 1
+36;Player changed Jersey number;"Player is forced to change jersey number; an associated qualifier will show the new number. outcome: always set to 1"
+37;Collection End;Signals that the match is over and data collection has been completed. outcome: always set to 1
+38;Temp Goal;Goal has occurred but it is pending additional detail qualifiers from Opta. Will change to event typeId 16. outcome: always set to 1
+39;Temp Attempt;Shot on goal has occurred but is pending additional detail qualifiers from Opta. Will change to event typeId 15. outcome: always set to 1
+40;Formation change;Team alters its formation. outcome: always set to 1
+41;Punch;"Goalkeeper only event; goalkeeper punches the ball. outcome = 0 - the punch lands at an opposition player outcome = 1 - the punch either lands at the goalkeeper's own team or goes out of play"
+42;Good skill;A player shows a good piece of skill on the ball, such as a step over or turn on the ball. outcome: always set to 1
+43;Deleted event;Event has been deleted - the event will remain as it was originally with the same event ID but will be present with the event typeId changed to 43. outcome: always set to 1
+44;Aerial;"Two players from opposing teams contest an aerial ball; these events come in pairs, one for each player, with the outcome indicating the success/failure of the aerial duel. outcome = 0 - Player lost aerial duel outcome = 1 - Player won aerial duel"
+45;Challenge;A player unsuccessfully attempts to tackle an opponent as the opponent dribbles past them. outcome: always set to 0 - a challenge by definition is unsuccessful and the player does not win the ball (winning the ball = would be a tackle, eg typeId 7).
+46;Postponed;
+47;Rescinded card;This can occur post match if the referee rescinds a card they have awarded. outcome: always set to 1
+49;Ball recovery;A player gathers a loose ball and gains control of possession for their team. outcome: always set to 1
+50;Dispossessed;Player is successfully tackled and loses possession of the ball. outcome: always set to 1
+51;Error;An error by a player, resulting in a shot or goal by the opposition. outcome: always set to 1
+52;Keeper pick-up;"Goalkeeper only event; goalkeeper picks up the ball. outcome: always set to 1"
+53;Cross not claimed;"Goalkeeper only event; goalkeeper attempts to catch a cross and fails to make contact with the ball (does not claim the cross). outcome: always set to 1"
+54;Smother;"Goalkeeper only event; goalkeeper covers a ground ball in the box and collects it, winning possession. outcome: always set to 1"
+55;Offside provoked;Awarded to the last defender when an offside decision is given against an attacking player. outcome: always set to 1
+56;Shield ball opp;A player uses their body to shield the ball from an opponent as it rolls out of play. outcome: always set to 1
+57;Foul throw-in;"A player takes a throw-in incorrectly, resulting in the throw being awarded to the other team. These events come in pairs; one for the player who commits the foul throw, another for the team that is then awarded the throw-in. outcome = 0 - Player who conceded the foul throw outcome = 1 - Player who won the foul throw"
+58;Penalty faced;An event which categorizes goalkeeper movement when facing a penalty taken. outcome: always set to 0
+59;Keeper Sweeper;"Goalkeeper only event; goalkeeper comes off their line to clear or claim the ball. outcome:  0(Lost) | 1(Won)"
+60;Chance missed;Used when a team/player does not actually have a shot on goal, but was in a good position to score and a player failed to generate a shot on goal - for example, only just missed receiving a pass. outcome: always set to 0
+61;Ball touch;A player unsuccessfully controls the ball and loses possession (for example, makes a bad touch on the ball). outcome = 0: the player attempted to control the ball and failed (lost possession). outcome = 1: the ball simply hit the player unintentionally, and they made no attempt to control it.
+62;Event placeholder;
+63;Temp Save;An event indicating a save has occurred but without full details. Event typeId 10 will follow shortly afterwards with full details. outcome: always set to 1
+64;Resume;The match has resumed on a new date after being abandoned mid-way through the game/during gameplay on a previous date
+65;Contentious referee decision;Any major talking point or error made by the referee - decision will be assigned to the relevant team.
+66;Possession Data;Note: No longer recorded in the feed Possession event will appear every 5 mins
+67;50/50;Two players run in and contend for a loose ball. These events come in pairs, one for each player, and indicates who gets to the ball first: outcome = 0 player lost 50/50 duel outcome = 1 player won 50/50 duel Note - 17 June 2020: This is added 'post-match' which means it is only shown once the post-match analysis is complete. It is only added for some competitions. This is a legacy eventTypeId that has been reinstated.
+68;Referee Drop Ball;Occurs after an 'End Delay' event (typeId 28) when a match resumes, having been stopped by the referee with the ball in play. This event comes in pairs, with an event given to both teams on restart. outcome = none (set to 1 by default) outcome = none (set to 1 by default)
+69;Failed to Block;Note - October 2019: No longer used (collected only for DFL between 2013/14 and 2016/17) A player fails to block a pass or shot attempt, despite being a distance of one metre or less from the attempt (challenge lost). outcome: always set to 1
+70;Injury Time Announcement;Declaration of the amount of injury time added at the end of each period as announced pitch-side by the fourth official. outcome: always set to 1
+71;Coach Setup;The qualifiers on this event identify team coaches and their roles. outcome: always set to 1
+72;Caught Offside;Indicates that a player has been caught offside. outcome: always set to 1
+73;Other Ball Contact;Note: This is an automated extra event for DFL. It comes with a tackle or an interception and indicates if the player who made the tackle/interception retained the ball after this action or if the tackle/interception was a single ball touch (other ball contact with event type 'Interception' (8), type 'Defensive Clearance', or type 'Tackle Retained Ball'). outcome: always set to 1
+74;Blocked Pass;"A player blocks a pass attempt by an opponent; similar to an Interception, but the player is already very close to the ball."
+75;Delayed start;The match start has been delayed.
+76;Early end;The match has had an early end.
+78;Temp card;
+79;Coverage interruption;"Indicates that the game (and our analysis) was interrupted; outcome 0 = start of interruption, outcome 1 = end of interruption), qualifier 344 (video coverage lost). The event will be input by the analysts at the beginning and end of the interruption to explain why fewer events may be input during that time."
+80;Drop of Ball;A goalkeeper drops the ball close to himself with the intention to play it with their feet. Live (live data collection).
+81;Obstacle;Ball touches the goal frame, the referee, the corner flag or any other non-player object on the field (excludes attempts that hit the woodwork). Live (live data collection).
+82;Control;Every ball touch by a player in possession that is not covered by a different event type. Example: A pass
+83;Attempted tackle;A player has attempted to tackle an opponent but has been unsuccessful.
+84;Deleted After Review;"This New Event type and type_id in order that the Contentious Referee Decision can be linked to it for all VAR cases. The deleted goal will now be a ‘Deleted after review’ event; we will now be able to link the CRD to this event, like we do to other non-deleted events. It keeps all the previous qualifier information, just like a regular deleted event does. (Added March 2021)"
