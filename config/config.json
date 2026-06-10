@@ -1,6 +1,6 @@
 {
   "scoresway": {
-    "sdapi_outlet_key": "añade aqui tu token",
+    "sdapi_outlet_key": "Inserte aquí su token",
     "ruta_dest":"scoresway"
     },
   "dummy_competition":"esp-ligaf",
