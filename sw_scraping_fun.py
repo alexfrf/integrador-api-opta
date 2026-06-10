@@ -180,7 +180,7 @@ def scrape_fixtures(metadata,url_competicion):
     print("✅ Estructura de carpetas creada (si no existía).")
     
     sdapi_outlet_key = obtener_sdapi_outlet_key(url_competicion)
-    print(f"sdapi_outlet_key: {sdapi_outlet_key}")
+    #print(f"sdapi_outlet_key: {sdapi_outlet_key}")
     
     fixture_json = obtener_fixture_json(sdapi_outlet_key, torneo_id, callback_id,url_competicion)
     
